@@ -6,3 +6,4 @@ image.png
 
 # Instrução de Uso
 As constantes e variáveis devem ser inseridas iguais ao PPL.
+
