@@ -5,7 +5,7 @@
 import numpy as np
 
 #Obter as dimensões do problema
-num_variables = int(input("Digite o número de variáveis na função objetivo: "))
+num_variables = int(input("Digite o número de variáveis: "))
 num_constraints = int(input("Digite o número de restrições: "))
 
 #Solicitar os coeficientes da função objetivo
@@ -13,7 +13,7 @@ funcObj = []
 
 for i in range(num_variables):
     coefficient = float(input(f"Digite o coeficiente da variável x{i+1} na função objetivo: "))
-    funcObj.append(coefficient)
+    funcObj.append(-coefficient)
 
 funcObj = np.array(funcObj)
 
@@ -35,6 +35,7 @@ const = []
 for i in range(num_constraints):
     constant = float(input(f"Digite o termo constante na restrição {i+1}: "))
     const.append(constant)
+
 const = np.array(const)
 
 def simplex(funcObj, restricoes, constantes):
