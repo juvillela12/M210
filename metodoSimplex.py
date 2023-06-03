@@ -91,16 +91,3 @@ solucao, valorOtimo, precoSombra = simplex(funcObj, restric, const)
 print(f'Solução Ótima: {solucao}')
 print(f'Valor Ótimo: {valorOtimo*(-1)}')
 print(f'Preços Sombra: {precoSombra*(-1)}')
-#650 700 700
-'''
-Testes de viabilidade
-#Verificando a viabilidade
-constraints_satisfied = np.all(np.dot(restric, funcObj) <= const)
-nonnegative_variables = np.all(funcObj >= 0)
-
-# Verificar se a solução é viável
-if constraints_satisfied and nonnegative_variables:
-    print("A solução é viável.")
-else:
-    print("A solução não é viável.")
-'''
