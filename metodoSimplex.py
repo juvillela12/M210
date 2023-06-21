@@ -81,14 +81,15 @@ def simplex(funcObj, restricoes, constantes):
             solucao[i] = tableau[row, -1]
 
     #Preço sombra
-    precoSombra = -tableau[-1, n_vars:-1]
+    precoSombra = tableau[-1, n_vars:-1]
 
-    return solucao, -tableau[-1, -1], precoSombra
+    return solucao, tableau[-1, -1], precoSombra
+
 
 #Chamada da função simplex para resolver o problema de programação linear 
 solucao, valorOtimo, precoSombra = simplex(funcObj, restric, const)
 
 #Imprimindo os resultados solicitados
 print(f'Solução Ótima: {solucao}')
-print(f'Valor Ótimo: {valorOtimo*(-1)}')
-print(f'Preços Sombra: {precoSombra*(-1)}')
+print(f'Lucro Ótimo: {valorOtimo}')
+print(f'Preços Sombra: {precoSombra}')
