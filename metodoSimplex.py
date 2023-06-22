@@ -44,11 +44,11 @@ def simplex(funcObj, restricoes, constantes):
     n_vars = len(funcObj)
     n_cons = len(constantes)
 
-    #Adicionando as variáveis às constantes em um vetor Add slack variables to constraints
+    #Adicionando as variáveis às constantes em um vetor 
     restricoes = np.hstack([restricoes, np.eye(n_cons)])
     funcObj = np.hstack([funcObj, np.zeros(n_cons)])
     
-    # Create initial tableau
+    #Cria um tableau inicial
     tableau = np.vstack([np.hstack([restricoes, constantes.reshape(-1, 1)]), np.hstack([funcObj, 0])])
 
     #Iteração até que o método encontre a solução ótima
@@ -72,7 +72,7 @@ def simplex(funcObj, restricoes, constantes):
             if i != pivot_row:
                 tableau[i] -= tableau[pivot_row] * tableau[i, pivot_col]
 
-    #Extraindo a solução e os preços sombra 
+    #Extraindo a solução 
     solucao = np.zeros(n_vars)
     for i in range(n_vars):
         col = tableau[:, i]
